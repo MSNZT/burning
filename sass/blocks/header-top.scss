@@ -1,0 +1,154 @@
+.header__top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 216px;
+}
+
+.header__logo {
+  margin-right: 70px;
+  @media (max-width: 900px) {
+    margin-right: auto;
+    z-index: 2;
+  }
+}
+
+.navbar {
+  margin-right: auto;
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+
+  &__link {
+    font-family: 'Anton';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 0.1em;
+
+    &:hover {
+      color: #c6c6c6;
+    }
+  }
+}
+
+.current {
+  color: #c6c6c6;
+}
+
+.header__phone {
+  display: inline-flex;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  letter-spacing: 0.1em;
+
+  &:hover {
+    color: #c6c6c6;
+  }
+}
+
+.navbar__toggle {
+  display: none;
+  width: 30px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 4;
+}
+@media (max-width: 900px) {
+  .navbar__toggle {
+    display: block;
+    margin-left: 20px;
+  }
+  .navbar__toggle .burger {
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    top: 9px;
+    transition: all 0.3s ease 0s;
+  }
+  .navbar__toggle::before, .navbar__toggle::after {
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+  }
+  .navbar__toggle::before {
+    top: 0;
+  }
+  .navbar__toggle::after {
+    bottom: 0;
+  }
+  .navbar__toggle.active .burger {
+    transform: scale(0);
+  }
+  .navbar__toggle.active::before {
+    transform: rotate(45deg);
+    top: 9px;
+    background-color: #ffffff;
+  }
+  .navbar__toggle.active::after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+    background-color: #ffffff;
+  }
+}
+
+@media (max-width: 900px) {
+  body.lock {
+    overflow: hidden;
+  }
+  .navbar {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #7760e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease 0s;
+  }
+  .navbar.active {
+    top: 0;
+  }
+  .navbar__list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar__item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .navbar__link {
+    font-size: 35px;
+    line-height: 30px;
+    color: #ffffff;
+  }
+  .current {
+    color: #c6c6c6;
+    opacity: 1;
+  }
+}
