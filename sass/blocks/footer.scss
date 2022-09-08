@@ -1,6 +1,10 @@
 .footer {
   &__container {
     padding-bottom: 106px;
+
+    @media (max-width: 1130px) {
+      padding-bottom: 40px;
+    }
   }
 
   &__copyright-text {
@@ -9,5 +13,9 @@
     line-height: 20px;
     color: #000000;
   }
+}
+
+.footer__copyright-text {
+  margin: 0;
 }
 
